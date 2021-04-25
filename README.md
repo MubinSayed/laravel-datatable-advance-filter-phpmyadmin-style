@@ -14,6 +14,7 @@ Easy Implementation of datatable filter.
 - Create Database
 - `cp .env.example .env` and add details of database
 - `composer install`
+- `php artisan key:generate`
 - `php artisan migrate --seed`
 - `php artisan serve`
 
