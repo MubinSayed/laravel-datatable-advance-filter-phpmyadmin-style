@@ -51,8 +51,7 @@
                                     <div class="col-md-4">
                                         <select name="course_id_operator" id="course_id_operator"
                                             class="select2me form-control  searchOperator">
-                                            {{-- Always keep "lk alias LIKE" option first --}}
-                                            {{ filterOptions(["lk", "e", "ne", "n", "nn", "bt", "nbt"]) }}
+                                            {{ filterOptions([ "e", "ne", "lk", "n", "nn", "bt", "nbt"]) }}
                                         </select>
                                     </div>
 
@@ -101,7 +100,7 @@
                                     <div class="col-md-4">
                                         <select name="course_code_operator" id="course_code_operator"
                                             class="select2me form-control  searchOperator">
-                                            {{ filterOptions(["e", "ne", "n", "nn", "lk"]) }}
+                                            {{ filterOptions([ "lk", "e", "ne", "n", "nn"]) }}
                                         </select>
                                     </div>
 
