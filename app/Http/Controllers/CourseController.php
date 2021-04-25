@@ -14,6 +14,7 @@ class CourseController extends Controller
         if ($request->ajax()) {
             // Array having field name as key and column name as value for filter
             $this->filterFieldArray = [
+                'course_id' => 'id',
                 'course_name' => 'name',
                 'course_code' => 'code',
             ];

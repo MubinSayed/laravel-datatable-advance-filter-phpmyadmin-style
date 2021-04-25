@@ -47,7 +47,36 @@
                             <div class="col-md-12">
 
                                 <div class="mb-3  row">
-                                    <label class="col-sm-3 col-form-label" for="course_name">Course Name</label>
+                                    <label class="col-sm-3 col-form-label" for="course_id">Id</label>
+                                    <div class="col-md-4">
+                                        <select name="course_id_operator" id="course_id_operator"
+                                            class="select2me form-control  searchOperator">
+                                            {{-- Always keep "lk alias LIKE" option first --}}
+                                            {{ filterOptions(["lk", "e", "ne", "n", "nn", "bt", "nbt"]) }}
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-4" id="course_id_div">
+                                        <input type="text" name="course_id" value=""
+                                            class="form-control filterControl" id="course_id"
+                                            placeholder="Id" required>
+                                    </div>
+
+                                    <div class="col-sm-4" style="display: none" id="course_id_range">
+                                        <input type="text" name="course_id_from" value=""
+                                            class="form-control filterControl" id="course_id_from"
+                                            placeholder="Id From" required>
+                                        <input type="text" name="course_id_to" value=""
+                                            class="form-control filterControl" id="course_id_to"
+                                            placeholder="Id To" required>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-12">
+
+                                <div class="mb-3  row">
+                                    <label class="col-sm-3 col-form-label" for="course_name">Name</label>
                                     <div class="col-md-4">
                                         <select name="course_name_operator" id="course_name_operator"
                                             class="select2me form-control  searchOperator">
@@ -59,7 +88,7 @@
                                     <div class="col-sm-4" id="course_name_div">
                                         <input type="text" name="course_name" value=""
                                             class="form-control filterControl" id="course_name"
-                                            placeholder="Course Name" required>
+                                            placeholder="Name" required>
                                     </div>
                                 </div>
 
@@ -68,7 +97,7 @@
                             <div class="col-md-12">
 
                                 <div class="mb-3  row">
-                                    <label class="col-sm-3 col-form-label" for="course_code"> Course Code</label>
+                                    <label class="col-sm-3 col-form-label" for="course_code"> Code</label>
                                     <div class="col-md-4">
                                         <select name="course_code_operator" id="course_code_operator"
                                             class="select2me form-control  searchOperator">
@@ -79,7 +108,7 @@
                                     <div class="col-sm-4" id="course_code_div">
                                         <input type="text" name="course_code" value=""
                                             class="form-control filterControl" id="course_code"
-                                            placeholder="Course Code">
+                                            placeholder="Code">
                                     </div>
                                 </div>
                             </div>
@@ -141,6 +170,11 @@
                 "ajax": {
                     url: '{{ route('course') }}',
                     data: function (d) {
+                        d.course_id = $('input[name=course_id]').val();
+                        d.course_id_to = $('#course_id_to').val();
+                        d.course_id_from = $('#course_id_from').val();
+                        d.course_id_operator = $('#course_id_operator').val();
+
                         d.course_name = $('input[name=course_name]').val();
                         d.course_name_operator = $('#course_name_operator').val();
 
