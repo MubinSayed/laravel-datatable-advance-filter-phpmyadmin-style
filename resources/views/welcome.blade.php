@@ -190,29 +190,6 @@
             });
 
             /* ---------------------Filter events start------------------------ */
-            // filter on button click
-            $(document).on('click', '.search-form', function(e) {
-                e.preventDefault();
-                oTable.draw();
-                console.log('search');
-            });
-
-            // reset filter
-            $(document).on('click', '.filter-reset', function(e) {
-                $('.searchOperator').trigger('change');
-                $(".filterControl").val("");
-                $('#select_filter').trigger("reset");
-                oTable.draw(false);
-	        });
-
-            // filter on enter
-            $(document).on('keypress', '.filterControl', function(e) {
-                var code = e.keyCode || e.which;
-                if (code == 13) {
-                    oTable.draw();
-                    e.preventDefault();
-                }
-            });
 
             // operator change event
             $(document).on('change','.searchOperator',function(){
@@ -239,6 +216,30 @@
                 else{
                     $("#"+input_id[0]+"_div").show();
                     $("#"+input_id[0]+"_range").hide();
+                }
+            });
+
+            // filter on button click
+            $(document).on('click', '.search-form', function(e) {
+                e.preventDefault();
+                oTable.draw();
+                console.log('search');
+            });
+
+            // reset filter
+            $(document).on('click', '.filter-reset', function(e) {
+                $('.searchOperator').val($(".searchOperator option:first").val()).trigger('change');
+                $(".filterControl").val("");
+                $('#select_filter').trigger("reset");
+                oTable.draw(false);
+	        });
+
+            // filter on enter
+            $(document).on('keypress', '.filterControl', function(e) {
+                var code = e.keyCode || e.which;
+                if (code == 13) {
+                    oTable.draw();
+                    e.preventDefault();
                 }
             });
 
