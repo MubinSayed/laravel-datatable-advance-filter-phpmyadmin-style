@@ -6,7 +6,7 @@
 
 Easy Implementation of datatable filter. 
 
-<img src="https://user-images.githubusercontent.com/9677258/115978211-7c5e4980-a59b-11eb-8861-700418485cb3.png" >
+<img src="https://user-images.githubusercontent.com/9677258/115979151-de21b200-a5a1-11eb-8bb1-ad9ef756e276.png" >
 
 ### Implementation
 
