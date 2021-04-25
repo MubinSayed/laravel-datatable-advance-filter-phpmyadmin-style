@@ -18,4 +18,10 @@ Easy Implementation of datatable filter.
 - `php artisan serve`
 
 
-Checkout app/Helper.php for different options of filter.
+### Guide
+
+Checkout [app/Helper.php](https://github.com/MubinSayed/laravel-datatable-advance-filter-phpmyadmin-style/blob/master/app/Helper.php) for different options of filter.
+
+## Contributing
+
+Anyone is welcome to contribute. Fork, make your changes, and then submit a pull request.
